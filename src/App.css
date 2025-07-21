@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, rgba(43, 118, 132, 0.8), rgba(37, 117, 252, 0.8)),
+              url('img1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.top-dashboard {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(110, 107, 107, 0.6);
+  padding: 1rem 2rem;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-dashboard h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.top-dashboard nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+   text-align: center;
+}
+
+.top-dashboard nav a:hover {
+  text-decoration: underline;
+}
+
+.main-section {
+  margin-top: 100px;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.main-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main-section button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: white;
+  color: #1e293b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feature-section,
+.ad-section,
+.about-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
