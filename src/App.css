@@ -65,6 +65,59 @@ body {
   padding: 4rem 2rem;
   text-align: center;
 }
+.ad-section {
+   
+  background-color: #3f889b;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.ad-image {
+  width: 650px;
+  height: 400px;
+  border-radius: 10px;
+  background-image: url('img2.jpg'); /* ← image path */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(66, 65, 65, 0.2);
+}
+
+
+.ad-text {
+  flex: 1;
+  color: white;
+  max-width: 600px;
+}
+
+.health-tips {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.health-tips li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: left;
+  background: #193c4d;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: rgb(252, 251, 251);
+
+  animation: blink 5s infinite; /* 👈 Add this */
+}
+
+/* Define blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 
 .card-grid {
   display: grid;

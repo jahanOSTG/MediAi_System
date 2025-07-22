@@ -1,0 +1,146 @@
+
+/* login.css */
+
+/* Overlay background */
+.login-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Modal box */
+.login-box {
+  background: #fff;
+  width: 360px;
+  padding: 30px 35px 40px;
+  border-radius: 14px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.12),
+    0 10px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+/* Toggle buttons container */
+.form-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+  gap: 12px;
+}
+
+/* Toggle buttons */
+.form-toggle button {
+  flex: 1;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #e3e7ea;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #3a3f47;
+  transition: background-color 0.3s, color 0.3s;
+  user-select: none;
+}
+
+.form-toggle button.active {
+  background-color: #1b3f49;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(27, 63, 73, 0.5);
+}
+
+.form-toggle button:hover:not(.active) {
+  background-color: #c1c7cd;
+}
+
+/* Forms */
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form labels */
+.login-box label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  color: #1b3f49;
+}
+
+/* Form inputs */
+.login-box input {
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1.8px solid #cbd2d9;
+  border-radius: 10px;
+  outline-offset: 2px;
+  transition: border-color 0.3s;
+  color: #1a1a1a;
+}
+
+.login-box input:focus {
+  border-color: #1b3f49;
+  box-shadow: 0 0 8px rgba(27, 63, 73, 0.3);
+}
+
+/* Submit buttons */
+.login-box button[type="submit"] {
+  margin-top: 28px;
+  padding: 13px 0;
+  font-weight: 700;
+  font-size: 17px;
+  background-color: #1b3f49;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button[type="submit"]:hover {
+  background-color: #145163;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: #7a7a7a;
+  cursor: pointer;
+  transition: color 0.3s;
+  user-select: none;
+}
+
+.close-btn:hover {
+  color: #1b3f49;
+}
+
+/* Responsive for small devices */
+@media (max-width: 400px) {
+  .login-box {
+    width: 90vw;
+    padding: 25px 20px 30px;
+  }
+
+  .form-toggle button {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .login-box button[type="submit"] {
+    font-size: 15px;
+  }
+}
