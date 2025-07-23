@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
+import Form from './Form'; // your login/register form
+import DiabeticForm from './DiabeticForm'; // diabetic prediction form
 import './App.css';
-import Form from './Form'; // import the Form component
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
+  const [showDiabeticForm, setShowDiabeticForm] = useState(false);
 
-  const handleLoginClick = () => {
-    setShowLogin(true);
-  };
+  const handleLoginClick = () => setShowLogin(true);
 
-  const handleCloseForm = () => {
-    setShowLogin(false);
+  const handleCloseLogin = () => setShowLogin(false);
+
+  const handleDiabeticClick = () => {
+    setShowDiabeticForm((prev) => !prev); // toggle form visibility
   };
 
   return (
     <div className="App">
-
-      {/* Fixed Top Dashboard */}
+      {/* Top Dashboard */}
       <header className="top-dashboard">
         <h1>🏥 MediAI Dashboard</h1>
         <nav>
@@ -38,16 +39,31 @@ function App() {
       <section className="feature-section" id="features">
         <h2>🔍 Features</h2>
         <div className="card-grid">
-          <div className="card">🧠 Diabetes Prediction</div>
+          <div
+            className="card"
+            onClick={handleDiabeticClick}
+            style={{ cursor: 'pointer' }}
+          >
+            🧠 Diabetes Prediction
+          </div>
           <div className="card">📝 Patient Management</div>
           <div className="card">👨‍⚕️ Doctor Panel</div>
           <div className="card">📊 Health Calculators</div>
-          <div className="card" onClick={handleLoginClick} style={{ cursor: 'pointer' }}>
+          <div
+            className="card"
+            onClick={handleLoginClick}
+            style={{ cursor: 'pointer' }}
+            aria-label="Login or Register"
+          >
             🔐 Login/Register
           </div>
         </div>
       </section>
 
+      {/* Show diabetic form if toggled */}
+      {showDiabeticForm && <DiabeticForm />}
+
+      {/* Advertisement / Health Tips Section */}
       <section className="ad-section">
         <div className="ad-image"></div>
         <div className="ad-text">
@@ -64,8 +80,50 @@ function App() {
 
       {/* About Section */}
       <section className="about-section" id="about">
-        <h2>About MediAI</h2>
-        <p>We aim to bridge the gap between technology and healthcare through machine learning.</p>
+        <div className="about-grid">
+          {/* Left Column: Text + Table */}
+          <div>
+            <h2>About MediAI</h2>
+            <p>
+              MediAI bridges the gap between technology and healthcare by integrating intelligent
+              systems powered by machine learning. Our mission is to make healthcare smarter,
+              faster, and more accessible.
+            </p>
+
+            {/* Table of Features */}
+            <table>
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>Availability</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="odd-row">
+                  <td>24/7 Bed Availability</td>
+                  <td className="text-green">Available</td>
+                </tr>
+                <tr>
+                  <td>AI Health Tips</td>
+                  <td className="text-green">Active</td>
+                </tr>
+                <tr className="odd-row">
+                  <td>Online Consultation</td>
+                  <td className="text-yellow">Coming Soon</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Right Column: Image */}
+          <div className="about-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1588776814546-ec7e9b3473cc"
+              alt="Hospital AI"
+              className="about-image"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
@@ -74,8 +132,8 @@ function App() {
         <p>Developed by Faria Janie | React + ML Project</p>
       </footer>
 
-      {/* Show login form modal if showLogin is true */}
-      {showLogin && <Form onClose={handleCloseForm} />}
+      {/* Login/Register Form Modal */}
+      {showLogin && <Form onClose={handleCloseLogin} />}
     </div>
   );
 }
